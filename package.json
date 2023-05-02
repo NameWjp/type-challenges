@@ -1,0 +1,19 @@
+{
+  "name": "type-challenges-answer",
+  "version": "0.0.0",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NameWjp/type-challenges-answer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NameWjp/type-challenges-answer/issues"
+  },
+  "homepage": "https://github.com/NameWjp/type-challenges-answer#readme",
+  "devDependencies": {
+    "@type-challenges/utils": "file:utils",
+    "typescript": "^5.0.4"
+  }
+}

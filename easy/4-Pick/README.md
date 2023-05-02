@@ -16,8 +16,8 @@ interface Todo {
 type TodoPreview = MyPick<Todo, 'title' | 'completed'>
 
 const todo: TodoPreview = {
-    title: 'Clean room',
-    completed: false,
+  title: 'Clean room',
+  completed: false,
 }
 ```
 
@@ -25,9 +25,8 @@ const todo: TodoPreview = {
 
 ## 答案
 ```ts
-type MyPick<T, K extends T> = {
+type MyPick<T, K extends keyof T> = {
   [key in K]: T[key]
 }
 ```
-
-主要理解 `extends` 和 `key` 关键字的用法
+主要理解 `extends`，`key`，`in` 等关键字的用法
