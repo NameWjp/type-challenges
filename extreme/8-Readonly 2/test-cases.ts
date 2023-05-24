@@ -1,6 +1,7 @@
 import type { Alike, Expect } from '@type-challenges/utils'
 
 type MyReadonly2<T, U extends keyof T = keyof T> = {
+  // 这里执行优先级： 先执行 in keyof 引出类型 P，再执行 extends 缩小范围，最后执行 as 强转
   [P in keyof T as P extends U ? never : P]: T[P]
 } & {
   readonly [P in U]: T[P]
