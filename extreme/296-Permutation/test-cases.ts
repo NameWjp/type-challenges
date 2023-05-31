@@ -2,7 +2,7 @@ import type { Equal, Expect } from '@type-challenges/utils'
 
 /**
  * 1. 判断 never 使用数组规避 extends 的分配条件类型特征
- * 2. 遍历或类型利用了 extends 的分配条件特性
+ * 2. 遍历联合类型利用了 extends 的分配条件类型特性
  * 答案：https://github.com/type-challenges/type-challenges/issues/614
  */
 type Permutation<T, K=T> = [T] extends [never]
