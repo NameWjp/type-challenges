@@ -1,5 +1,8 @@
 import type { Equal, Expect } from '@type-challenges/utils'
 
+/**
+ * 这里需要注意空对象的判断 { [key: string]: never }
+ */
 type AnyOf<T extends unknown[]> = T[number] extends 0 | '' | false | [] | { [key: string]: never } | undefined | null ? false : true
 
 type cases = [
