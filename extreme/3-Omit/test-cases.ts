@@ -1,6 +1,6 @@
 import type { Equal, Expect } from '@type-challenges/utils'
 
-// // 使用这种写法会丢失 readonly 等修饰符,例子见下
+// 使用这种写法会丢失 readonly 等修饰符,例子见下
 // type MyExclude<T, U> = T extends U ? never : T;
 // type MyOmit<T, K extends keyof T> = {
 //   [P in MyExclude<keyof T, K>]: T[P]
