@@ -7,9 +7,6 @@ type IndexOf<T extends unknown[], P, Index extends unknown[] = []> = T extends [
     : IndexOf<Rest, P, [...Index, 1]>
   : -1
 
-type c = [string] extends [any] ? true : false;
-type b = [any] extends [string] ? true : false;
-
 type cases = [
   Expect<Equal<IndexOf<[1, 2, 3], 2>, 1>>,
   Expect<Equal<IndexOf<[2, 6, 3, 8, 4, 1, 7, 3, 9], 3>, 2>>,
