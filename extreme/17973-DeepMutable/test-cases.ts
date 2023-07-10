@@ -1,6 +1,12 @@
 import type { Equal, Expect } from '@type-challenges/utils'
 
-type DeepMutable<T extends Record<keyof any, any>> = {
+/**
+ * 为什么在 Record<PropertyKey, any> 中要使用 any：
+ * 对于 interface 来说是可以新增属性的，所以 T extends Record<PropertyKey, unknown> 校验是没法通过的，
+ * 除非使用 type 定义或者为 interface 加上 [key:  PropertyKey]: unknown 的索引签名
+ * 参考：https://juejin.cn/post/7057471253279408135
+ */
+type DeepMutable<T extends Record<PropertyKey, any>> = {
   -readonly [K in keyof T]: T[K] extends Record<string, unknown> | readonly unknown[] ? DeepMutable<T[K]> : T[K]
 }
 
