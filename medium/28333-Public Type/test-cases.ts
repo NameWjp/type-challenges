@@ -1,16 +1,10 @@
 import type { Equal, Expect } from '@type-challenges/utils'
 
-type ExcludePrivate<T> = T extends T
-  ? T extends `_${infer _Any}`
-    ? never
-    : T
-  : never;
-
 /**
  * 注意使用 as 来规避 readonly 的丢失问题
  */
 type PublicType<T> = {
-  [K in keyof T as K extends ExcludePrivate<keyof T> ? K : never]: T[K]
+  [K in keyof T as K extends `_${infer _Any}` ? never : K]: T[K]
 }
 
 type cases = [
